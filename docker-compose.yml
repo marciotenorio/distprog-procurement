@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  db:
+    image: mysql
+    container_name: distprog-procurement
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      #To map for another port
+      MYSQL_TCP_PORT: 3307
+    ports:
+      - "3307:3307"
+    volumes:
+      - distprog-procurement:/var/lib/mysql
+
+volumes:
+  distprog-procurement:

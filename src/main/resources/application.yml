@@ -1,0 +1,43 @@
+server:
+  error:
+    include-stacktrace: on_param
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/procurement?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    generate-ddl: true
+    properties:
+      hibernate:
+        hbm2ddl:
+          create_namespaces: true
+        temp:
+          use_jdbc_metadata_defaults: false
+      enable_lazy_load_no_trans: true
+
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+
+#Setando com padr�o do logback do spring
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+#        Para debug quando voc� tem PreparedStatement
+#        type:
+#          descriptor:
+#            sql:
+#              BasicBinder: TRACE
