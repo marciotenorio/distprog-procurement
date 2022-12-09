@@ -1,40 +1,44 @@
 package br.imd.distprog.procurement.model;
 
 import br.imd.distprog.procurement.util.DBSchema;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "sale", schema = DBSchema.PROCUREMENT)
-@ToString
-@RequiredArgsConstructor
+@Table(name = "sale_product", schema = DBSchema.PROCUREMENT)
 @Getter
 @Setter
-public class Sale {
+@ToString
+@RequiredArgsConstructor
+public class SaleProduct {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Transient
-    private List<Long> productsId;
+    @NotNull
+    private Long saleId;
 
-    private BigDecimal price;
+    @NotNull
+    private Long productId;
+
+    @Transient
+    private List<Product> products;
+
+    @Transient
+    private List<Sale> sales;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Sale sale = (Sale) o;
-        return id != null && Objects.equals(id, sale.id);
+        SaleProduct that = (SaleProduct) o;
+        return id != null && Objects.equals(id, that.id);
     }
 
     @Override

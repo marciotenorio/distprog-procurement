@@ -4,7 +4,7 @@ services:
     image: mysql
     container_name: distprog-procurement
     environment:
-      MYSQL_ROOT_PASSWORD:
+      MYSQL_ROOT_PASSWORD: root
       #To map for another port
       MYSQL_TCP_PORT: 3307
     ports:

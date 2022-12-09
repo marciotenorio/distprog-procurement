@@ -9,7 +9,7 @@ public interface BuyOrderMapper {
 
     BuyOrderMapper INSTANCE = Mappers.getMapper(BuyOrderMapper.class);
 
-    BuyOrder postRequestBody(BuyOrderPostRequestBody buyOrderPostRequestBody);
+    BuyOrder postRequestBodyToBuyOrder(BuyOrderPostRequestBody buyOrderPostRequestBody);
 
-    BuyOrder putRequestBody(BuyOrderPutRequestBody buyOrderPutRequestBody);
+    BuyOrder putRequestBodyToBuyOrder(BuyOrderPutRequestBody buyOrderPutRequestBody);
 }

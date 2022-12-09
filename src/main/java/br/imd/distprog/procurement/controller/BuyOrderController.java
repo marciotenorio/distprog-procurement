@@ -5,6 +5,7 @@ import br.imd.distprog.procurement.dto.buyorder.BuyOrderPutRequestBody;
 import br.imd.distprog.procurement.model.BuyOrder;
 import br.imd.distprog.procurement.service.BuyOrderService;
 import br.imd.distprog.procurement.util.Route;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(Route.BUY_ORDERS)
+@AllArgsConstructor
 public class BuyOrderController {
 
     private BuyOrderService buyOrderService;
