@@ -15,6 +15,7 @@ public class ProcurementApplication {
         SpringApplication.run(ProcurementApplication.class, args);
     }
 
+
     @LoadBalanced
     @Bean
     public RestTemplate getRestTemplate(){
