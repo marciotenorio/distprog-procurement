@@ -15,3 +15,4 @@ Um simples e abstrato módulo de aquisição em um sistema de ERP.
 - Gateway
 - Inventory Management
 - Procurement
+- Config Server
